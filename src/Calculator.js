@@ -21,11 +21,10 @@ class calculator extends React.Component{
     updateInput(evt){
         var values = evt.target.value
         evt.preventDefault();
-        this.setState({
-            input:this.state.input+= values,
-            // previousNum:values,
-            // prevState:this.state.previousNum,
-            // input:prevState+= values,
+        this.setState((prevState) =>{
+            return{
+            input:prevState.input+= values,
+            }
         });  
     }
 
